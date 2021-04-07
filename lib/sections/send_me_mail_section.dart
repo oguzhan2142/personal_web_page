@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_personal_webpage/animated_button.dart';
 import 'package:my_personal_webpage/homepage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SendMeMailSection extends StatelessWidget {
   final String desc =
@@ -31,7 +32,14 @@ class SendMeMailSection extends StatelessWidget {
             SizedBox(height: 40),
             AnimatedBorderButton(
               title: 'Send Me Mail',
-              onClick: () {},
+              onClick: () {
+                final Uri _emailLaunchUri = Uri(
+                  scheme: 'mailto',
+                  path: 'oguzhantopal2142@gmail.com',
+                );
+
+                launch(_emailLaunchUri.toString());
+              },
               iconData: Icons.send,
               defaultColor: Colors.grey[200],
               hoverColor: themeColor,
