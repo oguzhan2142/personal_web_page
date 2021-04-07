@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 class AppbarActionButton extends StatefulWidget {
   final String title;
   final VoidCallback onClick;
+  final Color color;
 
-  const AppbarActionButton({Key key, this.title, this.onClick})
+  const AppbarActionButton({Key key, this.title, this.onClick, this.color})
       : super(key: key);
 
   @override
@@ -32,7 +33,7 @@ class _AppbarActionButtonState extends State<AppbarActionButton> {
     return MouseRegion(
       onHover: (event) {
         setState(() {
-          barColor = Colors.grey[400];
+          barColor = widget.color;
         });
       },
       onExit: (event) {
@@ -53,8 +54,7 @@ class _AppbarActionButtonState extends State<AppbarActionButton> {
                     style: GoogleFonts.getFont(
                       'Londrina Solid',
                       fontSize: 20,
-                      color: Colors.grey[400],
-
+                      color: widget.color,
                     ),
                   ),
                 ),

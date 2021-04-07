@@ -4,8 +4,13 @@ import 'package:my_personal_webpage/animated_button.dart';
 import 'package:my_personal_webpage/homepage.dart';
 
 class IntroductionSection extends StatelessWidget {
-  String description =
+  final String description =
       'I\'m a Turkish based physiotherapist & mobile developer focused on crafting clean  & user‑friendly experiences.';
+
+  final VoidCallback scrollProjectsSection;
+
+  const IntroductionSection({Key key, @required this.scrollProjectsSection})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +51,9 @@ class IntroductionSection extends StatelessWidget {
                 SizedBox(height: 60),
                 AnimatedBorderButton(
                   title: 'Projelerim',
-                  onClick: () {},
+                  onClick: () {
+                    scrollProjectsSection();
+                  },
                   hoverColor: Color.fromRGBO(21, 30, 33, 1),
                   defaultColor: Colors.grey[400],
                 ),
