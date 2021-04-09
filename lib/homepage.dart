@@ -91,7 +91,6 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           ScrollablePositionedList.builder(
-            
             itemCount: widgets.length,
             itemBuilder: (context, index) => widgets[index],
             itemScrollController: itemScrollController,

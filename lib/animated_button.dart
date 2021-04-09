@@ -7,6 +7,8 @@ class AnimatedBorderButton extends StatefulWidget {
   final IconData iconData;
   final Color defaultColor;
   final Color hoverColor;
+  final double width;
+  final double height;
 
   const AnimatedBorderButton({
     Key key,
@@ -15,6 +17,8 @@ class AnimatedBorderButton extends StatefulWidget {
     this.iconData,
     @required this.defaultColor,
     @required this.hoverColor,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -46,6 +50,8 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
       child: TextButton(
         onPressed: widget.onClick,
         child: AnimatedContainer(
+          width: widget.width != null ? widget.width : null,
+          height: widget.height != null ? widget.height : null,
           duration: Duration(milliseconds: 400),
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           decoration: BoxDecoration(
@@ -64,7 +70,7 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
                     Container(
                       margin: EdgeInsets.only(right: 10),
                       child: Icon(
-                        Icons.ad_units,
+                        widget.iconData,
                         color:
                             isHover ? widget.hoverColor : widget.defaultColor,
                       ),
