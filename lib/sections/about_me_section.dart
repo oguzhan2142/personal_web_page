@@ -9,7 +9,7 @@ class AboutmeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.orange,
+      color: Colors.green[700],
       width: MediaQuery.of(context).size.width,
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -21,7 +21,7 @@ class AboutmeSection extends StatelessWidget {
             Text(
               'About Me',
               style: GoogleFonts.lato(
-                color: HomePage.headerColor,
+                color: Colors.white,
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -30,7 +30,7 @@ class AboutmeSection extends StatelessWidget {
             Text(
               aboutMe,
               style: GoogleFonts.lato(
-                color: Colors.grey[800],
+                color: Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

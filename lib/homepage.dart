@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_personal_webpage/appbar_action_button.dart';
 import 'package:my_personal_webpage/sections/about_me_section.dart';
+import 'package:my_personal_webpage/sections/footer_section.dart';
 import 'package:my_personal_webpage/sections/introduction_section.dart';
 import 'package:my_personal_webpage/sections/portfolio_section.dart';
 import 'package:my_personal_webpage/sections/projects_section.dart';
@@ -71,6 +72,7 @@ class _HomePageState extends State<HomePage> {
       ProjectsSection(), //4
       AboutmeSection(), //5
       SendMeMailSection(), //6
+      FooterSection(),
     ];
     super.didChangeDependencies();
   }
@@ -89,6 +91,7 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           ScrollablePositionedList.builder(
+            
             itemCount: widgets.length,
             itemBuilder: (context, index) => widgets[index],
             itemScrollController: itemScrollController,

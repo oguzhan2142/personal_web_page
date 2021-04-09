@@ -27,6 +27,7 @@ class IntroductionSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: HomePage.horizontalPadding),
           child: Center(
             child: Column(
+              
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
