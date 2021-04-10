@@ -35,20 +35,21 @@ class ProjectWidget extends StatelessWidget {
           Text(
             title,
             style: GoogleFonts.lato(
-              fontSize: 30,
+              fontSize: HomePage.headerSize,
               fontWeight: FontWeight.bold,
+              color: HomePage.headerColor,
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: HomePage.gapBetweenHeaderAndText),
           Text(
             description,
             style: GoogleFonts.lato(
-              fontSize: 20,
-              color: Colors.grey[700],
-              fontWeight: FontWeight.w400,
+              fontSize: HomePage.textSize,
+              color: HomePage.textColor,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 60),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

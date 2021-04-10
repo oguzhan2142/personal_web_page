@@ -3,13 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_personal_webpage/homepage.dart';
 
 class PortfolioSection extends StatelessWidget {
-  String portfolioDesc =
-      'Below you can see some projects I\'ve been working on lately. I divide each project into four follow-up areas: comprehensive research, wireframing, design & development. This process allows me to create great product with client goals in mind.';
+  final String portfolioDesc =
+      'You can see the personal projects I have been working on below. Games are developed with unity and mobile applications with flutter and java.';
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: 60,
+        vertical: 120,
         horizontal: HomePage.horizontalPadding,
       ),
       child: Column(
@@ -18,16 +18,16 @@ class PortfolioSection extends StatelessWidget {
             'Portfolio',
             style: GoogleFonts.lato(
               color: HomePage.headerColor,
-              fontSize: 30,
+              fontSize: HomePage.headerSize,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: HomePage.gapBetweenHeaderAndText),
           Text(
             portfolioDesc,
             style: GoogleFonts.lato(
               color: HomePage.textColor,
-              fontSize: 16,
+              fontSize: HomePage.textSize,
               fontWeight: FontWeight.bold,
             ),
           ),

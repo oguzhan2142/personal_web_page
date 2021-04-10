@@ -56,7 +56,6 @@ class ProjectsSection extends StatelessWidget {
             description: 'Series episodes and seasons overview app',
             screenshotPath: 'assets/projects_screenshots/episolide.png',
             imageWidth: MediaQuery.of(context).size.width / 3 * 2,
-
             githubLink: 'https://github.com/oguzhan2142/Episolide',
           ),
         ],

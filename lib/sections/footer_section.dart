@@ -12,16 +12,16 @@ class FooterSection extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.symmetric(
         horizontal: HomePage.horizontalPadding,
-        vertical: 80,
+        vertical: 90,
       ),
-      color: Colors.grey[700],
+      color: HomePage.headerColor,
       child: Column(
         children: [
           Text(
             '©2021 OGUZHAN TOPAL.MADE IN TURKEY',
             style: GoogleFonts.lato(
               fontWeight: FontWeight.bold,
-              color: Colors.white54,
+              color: Colors.grey[600],
             ),
           ),
           SizedBox(height: 50),
@@ -29,7 +29,7 @@ class FooterSection extends StatelessWidget {
             desc,
             style: GoogleFonts.lato(
               fontWeight: FontWeight.bold,
-              color: Colors.white54,
+              color: Colors.grey[600],
             ),
           ),
         ],

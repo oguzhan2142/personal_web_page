@@ -8,11 +8,11 @@ class SendMeMailSection extends StatelessWidget {
   final String desc =
       'If you like my work and have some cool project to work on, just send me direct message or contact me through social sites listed below.';
 
-  final Color themeColor = Colors.blueGrey[700];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: themeColor,
+      color: HomePage.headerColor,
       width: MediaQuery.of(context).size.width,
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -22,9 +22,18 @@ class SendMeMailSection extends StatelessWidget {
         child: Column(
           children: [
             Text(
+              'Contact',
+              style: GoogleFonts.lato(
+                color: Colors.grey[300],
+                fontSize: HomePage.headerSize,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            Text(
               desc,
               style: GoogleFonts.lato(
-                color: Colors.grey[200],
+                color: Colors.grey[400],
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -41,8 +50,8 @@ class SendMeMailSection extends StatelessWidget {
                 launch(_emailLaunchUri.toString());
               },
               iconData: Icons.send,
-              defaultColor: Colors.grey[200],
-              hoverColor: themeColor,
+              defaultColor: Colors.grey[400],
+              hoverColor: HomePage.headerColor,
             ),
           ],
         ),

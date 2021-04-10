@@ -5,7 +5,7 @@ import 'package:my_personal_webpage/homepage.dart';
 
 class IntroductionSection extends StatelessWidget {
   final String description =
-      'I\'m a Turkish based physiotherapist & mobile developer focused on crafting clean  & user‑friendly experiences.';
+      'I\'m a Turkish based physiotherapist & mobile developer focused on self development.';
 
   final VoidCallback scrollProjectsSection;
 
@@ -51,7 +51,7 @@ class IntroductionSection extends StatelessWidget {
                 ),
                 SizedBox(height: 60),
                 AnimatedBorderButton(
-                  title: 'Projelerim',
+                  title: 'My Projects',
                   onClick: () {
                     scrollProjectsSection();
                   },

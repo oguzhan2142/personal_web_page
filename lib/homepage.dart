@@ -9,8 +9,12 @@ import 'package:my_personal_webpage/sections/send_me_mail_section.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class HomePage extends StatefulWidget {
-  static final horizontalPadding = 30.0;
+  static final horizontalPadding = 60.0;
   static final Color textColor = Colors.grey[600];
+  static final double textSize = 16;
+  static final double headerSize = 30;
+  static final double gapBetweenHeaderAndText = 30;
+
   static final Color headerColor = Color.fromRGBO(21, 30, 33, 1);
 
   @override
@@ -57,22 +61,35 @@ class _HomePageState extends State<HomePage> {
       ),
       //1
       Divider(
-        color: Colors.black38,
-        height: 1,
-        thickness: 0.5,
+        color: Colors.grey,
+        height: 0.3,
+        thickness: 0.3,
       ),
       //2
       PortfolioSection(),
       //3
       Divider(
-        color: Colors.black38,
-        height: 1,
-        thickness: 0.5,
+        color: Colors.grey,
+        height: 0.3,
+        thickness: 0.3,
       ),
       ProjectsSection(), //4
+
       AboutmeSection(), //5
-      SendMeMailSection(), //6
-      FooterSection(),
+      Divider(
+        //6
+        color: Colors.grey,
+        height: 0.3,
+        thickness: 0.3,
+      ),
+      SendMeMailSection(), //7
+      Divider(
+        //8
+        color: Colors.grey,
+        height: 0.3,
+        thickness: 0.3,
+      ),
+      FooterSection(), //9
     ];
     super.didChangeDependencies();
   }
@@ -133,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                   title: 'Contact',
                   color: isSwiped ? HomePage.headerColor : Colors.grey[400],
                   onClick: () {
-                    animateToIndex(6);
+                    animateToIndex(7);
                   },
                 ),
               ],
