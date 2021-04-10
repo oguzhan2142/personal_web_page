@@ -50,38 +50,74 @@ class ProjectWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 60),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              AnimatedBorderButton(
-                title: 'Github',
-                iconData: FontAwesomeIcons.github,
-                onClick: githubLink != null
-                    ? () {
-                        js.context.callMethod('open', [githubLink]);
-                      }
-                    : null,
-                width: 200,
-                defaultColor: Colors.red,
-                disableColor: Colors.grey[600],
-                hoverColor: Colors.white,
-              ),
-              SizedBox(width: 30),
-              AnimatedBorderButton(
-                title: 'Live',
-                iconData: Icons.computer,
-                width: 200,
-                onClick: liveLink != null
-                    ? () {
-                        js.context.callMethod('open', [liveLink]);
-                      }
-                    : null,
-                defaultColor: Colors.red,
-                hoverColor: Colors.white,
-                disableColor: Colors.grey[600],
-              ),
-            ],
-          ),
+          MediaQuery.of(context).size.width > 900
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AnimatedBorderButton(
+                      title: 'Github',
+                      iconData: FontAwesomeIcons.github,
+                      onClick: githubLink != null
+                          ? () {
+                              js.context.callMethod('open', [githubLink]);
+                            }
+                          : null,
+                      width: MediaQuery.of(context).size.width / 6,
+                      height: MediaQuery.of(context).size.width / 18,
+                      defaultColor: Colors.red,
+                      disableColor: Colors.grey[600],
+                      hoverColor: Colors.white,
+                    ),
+                    SizedBox(width: 30),
+                    AnimatedBorderButton(
+                      title: 'Live',
+                      iconData: Icons.computer,
+                      width: MediaQuery.of(context).size.width / 6,
+                      height: MediaQuery.of(context).size.width / 18,
+                      onClick: liveLink != null
+                          ? () {
+                              js.context.callMethod('open', [liveLink]);
+                            }
+                          : null,
+                      defaultColor: Colors.red,
+                      hoverColor: Colors.white,
+                      disableColor: Colors.grey[600],
+                    ),
+                  ],
+                )
+              : Column(
+                  children: [
+                    AnimatedBorderButton(
+                      title: 'Github',
+                      iconData: FontAwesomeIcons.github,
+                      onClick: githubLink != null
+                          ? () {
+                              js.context.callMethod('open', [githubLink]);
+                            }
+                          : null,
+                      width: MediaQuery.of(context).size.width / 2,
+                      height: MediaQuery.of(context).size.width / 6,
+                      defaultColor: Colors.red,
+                      disableColor: Colors.grey[600],
+                      hoverColor: Colors.white,
+                    ),
+                    SizedBox(width: 30, height: 30),
+                    AnimatedBorderButton(
+                      title: 'Live',
+                      iconData: Icons.computer,
+                      width: MediaQuery.of(context).size.width / 2,
+                      height: MediaQuery.of(context).size.width / 6,
+                      onClick: liveLink != null
+                          ? () {
+                              js.context.callMethod('open', [liveLink]);
+                            }
+                          : null,
+                      defaultColor: Colors.red,
+                      hoverColor: Colors.white,
+                      disableColor: Colors.grey[600],
+                    ),
+                  ],
+                ),
           SizedBox(height: 20),
           Image.asset(screenshotPath, width: imageWidth),
         ],

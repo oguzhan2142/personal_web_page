@@ -22,7 +22,7 @@ class FooterSection extends StatelessWidget {
 
   final _defaultStyle = GoogleFonts.lato(
     fontWeight: FontWeight.bold,
-    color: Colors.grey[600],
+    color: Colors.grey[500],
   );
 
   final _hoverStyle = GoogleFonts.lato(
@@ -50,7 +50,10 @@ class FooterSection extends StatelessWidget {
           SizedBox(height: 50),
           RichText(
             text: TextSpan(
-              style: _defaultStyle,
+              style: GoogleFonts.lato(
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[600],
+              ),
               children: [
                 TextSpan(text: descTexts[0]),
                 WidgetSpan(
@@ -83,9 +86,9 @@ class FooterSection extends StatelessWidget {
                     text: descTexts[6],
                     defaultStyle: _defaultStyle,
                     hoverStyle: _hoverStyle,
-                      onClick: () {
-                      js.context.callMethod(
-                          'open', ['https://fonts.google.com']);
+                    onClick: () {
+                      js.context
+                          .callMethod('open', ['https://fonts.google.com']);
                     },
                   ),
                 ),
@@ -95,9 +98,9 @@ class FooterSection extends StatelessWidget {
                     text: descTexts[8],
                     defaultStyle: _defaultStyle,
                     hoverStyle: _hoverStyle,
-                      onClick: () {
-                      js.context.callMethod(
-                          'open', ['http://www.pavelhuza.com']);
+                    onClick: () {
+                      js.context
+                          .callMethod('open', ['http://www.pavelhuza.com']);
                     },
                   ),
                 ),

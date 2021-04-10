@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,11 +33,20 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
 
   Color getContentColor() {
     if (widget.onClick == null) return widget.disableColor;
-
     return isHover ? widget.hoverColor : widget.defaultColor;
   }
 
-  
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    print(MediaQuery.of(context).size.width);
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,11 +102,11 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
                     ),
                   ],
                 )
-              : Text(
+              : AutoSizeText(
                   widget.title,
+                  maxFontSize: 16,
                   style: GoogleFonts.lato(
                     color: getContentColor(),
-                    fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
