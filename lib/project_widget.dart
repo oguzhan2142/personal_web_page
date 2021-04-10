@@ -11,6 +11,7 @@ class ProjectWidget extends StatelessWidget {
   final String githubLink;
   final String liveLink;
   final String screenshotPath;
+  final double imageWidth;
 
   const ProjectWidget({
     Key key,
@@ -19,6 +20,7 @@ class ProjectWidget extends StatelessWidget {
     @required this.screenshotPath,
     this.githubLink,
     this.liveLink,
+    @required this.imageWidth,
   }) : super(key: key);
 
   @override
@@ -53,11 +55,14 @@ class ProjectWidget extends StatelessWidget {
               AnimatedBorderButton(
                 title: 'Github',
                 iconData: FontAwesomeIcons.github,
-                onClick: () {
-                  js.context.callMethod('open', [githubLink]);
-                },
+                onClick: githubLink != null
+                    ? () {
+                        js.context.callMethod('open', [githubLink]);
+                      }
+                    : null,
                 width: 200,
                 defaultColor: Colors.red,
+                disableColor: Colors.grey[600],
                 hoverColor: Colors.white,
               ),
               SizedBox(width: 30),
@@ -65,17 +70,19 @@ class ProjectWidget extends StatelessWidget {
                 title: 'Live',
                 iconData: Icons.computer,
                 width: 200,
-                onClick: () {
-                  js.context.callMethod('open', [liveLink]);
-                },
+                onClick: liveLink != null
+                    ? () {
+                        js.context.callMethod('open', [liveLink]);
+                      }
+                    : null,
                 defaultColor: Colors.red,
                 hoverColor: Colors.white,
+                disableColor: Colors.grey[600],
               ),
             ],
           ),
-          SizedBox(height: 5),
-          Image.asset(screenshotPath,
-              width: MediaQuery.of(context).size.width / 3 * 2),
+          SizedBox(height: 20),
+          Image.asset(screenshotPath, width: imageWidth),
         ],
       ),
     );

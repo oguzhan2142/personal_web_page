@@ -9,7 +9,7 @@ class AnimatedBorderButton extends StatefulWidget {
   final Color hoverColor;
   final double width;
   final double height;
-
+  final Color disableColor;
   const AnimatedBorderButton({
     Key key,
     @required this.title,
@@ -19,6 +19,7 @@ class AnimatedBorderButton extends StatefulWidget {
     @required this.hoverColor,
     this.width,
     this.height,
+    this.disableColor,
   }) : super(key: key);
 
   @override
@@ -29,20 +30,25 @@ class AnimatedBorderButton extends StatefulWidget {
 class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
   bool isHover = false;
 
-  @override
-  void initState() {
-    super.initState();
+  Color getContentColor() {
+    if (widget.onClick == null) return widget.disableColor;
+
+    return isHover ? widget.hoverColor : widget.defaultColor;
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onHover: (event) {
+        if (widget.onClick == null) return;
         setState(() {
           isHover = true;
         });
       },
       onExit: (event) {
+        if (widget.onClick == null) return;
         setState(() {
           isHover = false;
         });
@@ -57,7 +63,9 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
           decoration: BoxDecoration(
             color: isHover ? widget.defaultColor : Colors.transparent,
             border: Border.all(
-              color: widget.defaultColor,
+              color: widget.onClick != null
+                  ? widget.defaultColor
+                  : widget.disableColor,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(4),
@@ -71,15 +79,13 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
                       margin: EdgeInsets.only(right: 10),
                       child: Icon(
                         widget.iconData,
-                        color:
-                            isHover ? widget.hoverColor : widget.defaultColor,
+                        color: getContentColor(),
                       ),
                     ),
                     Text(
                       widget.title,
                       style: GoogleFonts.lato(
-                        color:
-                            isHover ? widget.hoverColor : widget.defaultColor,
+                        color: getContentColor(),
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
@@ -89,7 +95,7 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton> {
               : Text(
                   widget.title,
                   style: GoogleFonts.lato(
-                    color: isHover ? widget.hoverColor : widget.defaultColor,
+                    color: getContentColor(),
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
