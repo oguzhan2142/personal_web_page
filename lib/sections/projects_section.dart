@@ -40,6 +40,25 @@ class ProjectsSection extends StatelessWidget {
             liveLink: 'https://oguzhan2142.itch.io/platform-game',
             imageWidth: MediaQuery.of(context).size.width / 5 * 2,
           ),
+          Divider(
+            height: 2,
+            thickness: 0.3,
+            color: Colors.black54,
+          ),
+          ProjectWidget(
+            title: 'Ekşimtrak',
+            description: 'An app for eksisozluk.com',
+            screenshotPath: 'assets/projects_screenshots/eksimtrak.png',
+            imageWidth: MediaQuery.of(context).size.width / 3 * 2,
+          ),
+          ProjectWidget(
+            title: 'Episolide',
+            description: 'Series episodes and seasons overview app',
+            screenshotPath: 'assets/projects_screenshots/episolide.png',
+            imageWidth: MediaQuery.of(context).size.width / 3 * 2,
+
+            githubLink: 'https://github.com/oguzhan2142/Episolide',
+          ),
         ],
       ),
     );
