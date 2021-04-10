@@ -4,7 +4,7 @@ import 'package:my_personal_webpage/homepage.dart';
 
 class AboutmeSection extends StatelessWidget {
   final String aboutMe =
-      "I\'m web designer & front-end developer with 7 years of professional experience. I\'m interested in all kinds of visual communication, but my major focus is on designing web, mobile & tablet interfaces. I also have skills in other fields like branding, icon design or web development.Earlier I was full-time freelancer for 6 years behind my studio Precise Design. Currently I\'m working for little overgrown czech “start-up” called Heureka.cz Restu.cz as a Senior UI/UX designer Product designer.";
+      "I\'m physical therapist & software engineer student. I\'m interested in developing mobile apps & mobile games using unity, flutter and java technologies. Earlier I was full-time physiotherapist but currently I am changing my career towards the field I am passionate about.";
 
   @override
   Widget build(BuildContext context) {
