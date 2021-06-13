@@ -1,16 +1,14 @@
-# my_personal_webpage
+## My Personal Webpage
 
-A new Flutter project.
+- Written with flutter web
 
-## Getting Started
+#### Link
+- https://www.oguzhantopal.com
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+#### Hosting on Netifly
+[![Netlify Status](https://api.netlify.com/api/v1/badges/363e0aaf-0656-4b77-b210-0663e09c9298/deploy-status)](https://app.netlify.com/sites/gracious-mayer-d1ee0d/deploys)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+

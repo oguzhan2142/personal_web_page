@@ -46,9 +46,11 @@ class ProjectsSection extends StatelessWidget {
             color: Colors.black54,
           ),
           ProjectWidget(
-            title: 'Ekşimtrak',
+            title: 'Ekşimsi',
             description: 'An app for eksisozluk.com',
             screenshotPath: 'assets/projects_screenshots/eksimtrak.png',
+            liveLink:
+                'https://play.google.com/store/apps/details?id=com.oguzhan.eksi_sozluk',
             imageWidth: MediaQuery.of(context).size.width / 3 * 2,
           ),
           ProjectWidget(
